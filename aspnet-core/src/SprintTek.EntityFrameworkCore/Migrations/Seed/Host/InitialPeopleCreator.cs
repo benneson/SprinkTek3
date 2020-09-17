@@ -4,10 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static SprintTek.Phonebook.Phone;
 
 namespace SprintTek.Migrations.Seed.Host
 {
-    class InitialPeopleCreator
+    public class InitialPeopleCreator
     {
         private readonly SprintTekDbContext _context;
 

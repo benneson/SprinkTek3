@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace SprintTek
 {
-    [AbpAuthorize(AppPermissions.Pages_Tenant_PhoneBook)]
+    //[AbpAuthorize(AppPermissions.Pages_Tenant_PhoneBook)]
     class PersonAppService : SprintTekAppServiceBase, IPersonAppService
     {
         private readonly IRepository<Person> _personRepository;
@@ -40,14 +40,14 @@ namespace SprintTek
             return new ListResultDto<PersonListDto>(ObjectMapper.Map<List<PersonListDto>>(people));
         }
 
-        [AbpAuthorize(AppPermissions.Pages_Tenant_PhoneBook_CreatePerson)]
+        //[AbpAuthorize(AppPermissions.Pages_Tenant_PhoneBook_CreatePerson)]
         public async Task CreatePerson(CreatePersonInput input)
         {
             var person = ObjectMapper.Map<Person>(input);
             await _personRepository.InsertAsync(person);
         }
 
-        [AbpAuthorize(AppPermissions.Pages_Tenant_PhoneBook_DeletePerson)]
+        //[AbpAuthorize(AppPermissions.Pages_Tenant_PhoneBook_DeletePerson)]
         public async Task DeletePerson(EntityDto input)
         {
             await _personRepository.DeleteAsync(input.Id);

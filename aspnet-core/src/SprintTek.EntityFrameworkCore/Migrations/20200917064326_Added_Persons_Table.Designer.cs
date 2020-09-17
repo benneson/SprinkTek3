@@ -10,7 +10,7 @@ using SprintTek.EntityFrameworkCore;
 namespace SprintTek.Migrations
 {
     [DbContext(typeof(SprintTekDbContext))]
-    [Migration("20200916070938_Added_Persons_Table")]
+    [Migration("20200917064326_Added_Persons_Table")]
     partial class Added_Persons_Table
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1990,7 +1990,38 @@ namespace SprintTek.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Persons");
+                    b.ToTable("PbPersons");
+                });
+
+            modelBuilder.Entity("SprintTek.Phonebook.Phone", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("CreatorUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Number")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(16)")
+                        .HasMaxLength(16);
+
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
+                    b.Property<byte>("Type")
+                        .HasColumnType("tinyint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PersonId");
+
+                    b.ToTable("PbPhones");
                 });
 
             modelBuilder.Entity("SprintTek.Storage.BinaryObject", b =>
@@ -2274,6 +2305,15 @@ namespace SprintTek.Migrations
                     b.HasOne("SprintTek.Authorization.Users.User", "LastModifierUser")
                         .WithMany()
                         .HasForeignKey("LastModifierUserId");
+                });
+
+            modelBuilder.Entity("SprintTek.Phonebook.Phone", b =>
+                {
+                    b.HasOne("SprintTek.Phonebook.Person", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Abp.Application.Features.EditionFeatureSetting", b =>

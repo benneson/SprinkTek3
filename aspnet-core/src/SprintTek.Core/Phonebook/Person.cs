@@ -24,5 +24,7 @@ namespace SprintTek.Phonebook
 
         [MaxLength(MaxEmailAddressLength)]
         public virtual string EmailAddress { get; set; }
+        //public virtual ICollection<Phone> Phones { get; set; }
+
     }
 }
