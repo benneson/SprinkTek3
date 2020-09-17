@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
+using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 
 namespace SprintTek
 {

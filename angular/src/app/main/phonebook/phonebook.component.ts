@@ -33,6 +33,7 @@ export class PhoneBookComponent extends AppComponentBase implements OnInit {
     deletePerson(person: PersonListDto): void {
         this.message.confirm(
             this.l('AreYouSureToDeleteThePerson', person.name),
+            '',
             isConfirmed => {
                 if (isConfirmed) {
                     this._personService.deletePerson(person.id).subscribe(() => {

@@ -18,7 +18,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxBootstrapDatePickerConfigService } from 'assets/ngx-bootstrap/ngx-bootstrap-datepicker-config.service';
 
 import { PhoneBookComponent } from './phonebook/phonebook.component';
-import { CreatePersonModalComponent } from './phonebook/create-person-modal.component';
+// import { CreatePersonModalComponent } from './phonebook/create-person-modal.component';
 
 
 NgxBootstrapDatePickerConfigService.registerNgxBootstrapDatePickerLocales();
@@ -42,7 +42,7 @@ NgxBootstrapDatePickerConfigService.registerNgxBootstrapDatePickerLocales();
     declarations: [
         DashboardComponent,
         PhoneBookComponent,
-        CreatePersonModalComponent
+        // CreatePersonModalComponent
     ],
     providers: [
         { provide: BsDatepickerConfig, useFactory: NgxBootstrapDatePickerConfigService.getDatepickerConfig },

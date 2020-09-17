@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace SprintTek
 {
     //[AbpAuthorize(AppPermissions.Pages_Tenant_PhoneBook)]
-    class PersonAppService : SprintTekAppServiceBase, IPersonAppService
+    public class PersonAppService : SprintTekAppServiceBase, IPersonAppService
     {
         private readonly IRepository<Person> _personRepository;
 
