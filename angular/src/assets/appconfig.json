@@ -1,5 +1,5 @@
 {
-  "remoteServiceBaseUrl": "http://localhost:65302/",
+  "remoteServiceBaseUrl": "http://localhost:65302",
   "appBaseUrl": "http://localhost:4200",
   "localeMappings": {
     "angular": [
