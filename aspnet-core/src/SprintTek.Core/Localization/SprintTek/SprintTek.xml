@@ -1,6 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <localizationDictionary culture="en">
-  <texts>
+  <texts>    <text name="Bottles">Bottles</text>
+    <text name="Bottle">Bottle</text>
+    <text name="SprintTek.Bottles.Bottle">Bottle</text>
+    <text name="BottlesHeaderInfo">Bottles header info</text>
+    <text name="CreateNewBottle">Create new bottle</text>
+    <text name="EditBottle">Edit bottle</text>
+    <text name="DeleteBottle">Delete bottle</text>
+    <text name="Docs">Docs</text>
+    <text name="Doc">Doc</text>
+    <text name="SprintTek.Docs.Doc">Doc</text>
+    <text name="name">name</text>
+    <text name="NotActive">Not active</text>
+    <text name="DocsHeaderInfo">Docs header info</text>
+    <text name="CreateNewDoc">Create new doc</text>
+    <text name="EditDoc">Edit doc</text>
+    <text name="DeleteDoc">Delete doc</text>
+    <text name="{0}IsRequired">{0} is required.</text>
+    <text name="View">View</text>
+    <text name="Details">Details</text>
+    <text name="Pick">Pick</text>
+    <text name="True">True</text>
+    <text name="False">False</text>
+    <text name="MinValue">Min</text>
+    <text name="MaxValue">Max</text>
+
     <text name="HomePage">Home page</text>
     <text name="AboutUs">About us</text>
     <text name="Administration">Administration</text>

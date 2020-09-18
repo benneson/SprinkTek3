@@ -33,6 +33,20 @@ namespace SprintTek.Authorization
 
             var administration = pages.CreateChildPermission(AppPermissions.Pages_Administration, L("Administration"));
 
+            var bottles = administration.CreateChildPermission(AppPermissions.Pages_Administration_Bottles, L("Bottles"));
+            bottles.CreateChildPermission(AppPermissions.Pages_Administration_Bottles_Create, L("CreateNewBottle"));
+            bottles.CreateChildPermission(AppPermissions.Pages_Administration_Bottles_Edit, L("EditBottle"));
+            bottles.CreateChildPermission(AppPermissions.Pages_Administration_Bottles_Delete, L("DeleteBottle"));
+
+
+
+            var docs = administration.CreateChildPermission(AppPermissions.Pages_Administration_Docs, L("Docs"));
+            docs.CreateChildPermission(AppPermissions.Pages_Administration_Docs_Create, L("CreateNewDoc"));
+            docs.CreateChildPermission(AppPermissions.Pages_Administration_Docs_Edit, L("EditDoc"));
+            docs.CreateChildPermission(AppPermissions.Pages_Administration_Docs_Delete, L("DeleteDoc"));
+
+
+
             var roles = administration.CreateChildPermission(AppPermissions.Pages_Administration_Roles, L("Roles"));
             roles.CreateChildPermission(AppPermissions.Pages_Administration_Roles_Create, L("CreatingNewRole"));
             roles.CreateChildPermission(AppPermissions.Pages_Administration_Roles_Edit, L("EditingRole"));

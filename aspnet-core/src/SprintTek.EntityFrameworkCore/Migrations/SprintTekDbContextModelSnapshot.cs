@@ -1621,6 +1621,29 @@ namespace SprintTek.Migrations
                     b.ToTable("AbpUsers");
                 });
 
+            modelBuilder.Entity("SprintTek.Bottles.Bottle", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TenantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId");
+
+                    b.ToTable("Bottles");
+                });
+
             modelBuilder.Entity("SprintTek.Chat.ChatMessage", b =>
                 {
                     b.Property<long>("Id")
@@ -1671,6 +1694,29 @@ namespace SprintTek.Migrations
                     b.HasIndex("TenantId", "UserId", "ReadState");
 
                     b.ToTable("AppChatMessages");
+                });
+
+            modelBuilder.Entity("SprintTek.Docs.Doc", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("TenantId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId");
+
+                    b.ToTable("docs");
                 });
 
             modelBuilder.Entity("SprintTek.Friendships.Friendship", b =>

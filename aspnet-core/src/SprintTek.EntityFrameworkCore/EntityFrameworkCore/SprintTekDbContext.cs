@@ -1,4 +1,6 @@
-﻿using Abp.IdentityServer4;
+﻿using SprintTek.Bottles;
+using SprintTek.Docs;
+using Abp.IdentityServer4;
 using Abp.Organizations;
 using Abp.Zero.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +20,10 @@ namespace SprintTek.EntityFrameworkCore
 {
     public class SprintTekDbContext : AbpZeroDbContext<Tenant, Role, User, SprintTekDbContext>, IAbpPersistedGrantDbContext
     {
+        public virtual DbSet<Bottle> Bottles { get; set; }
+
+        public virtual DbSet<Doc> Docs { get; set; }
+
         /* Define an IDbSet for each entity of the application */
 
         public virtual DbSet<BinaryObject> BinaryObjects { get; set; }
@@ -53,7 +59,17 @@ namespace SprintTek.EntityFrameworkCore
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<BinaryObject>(b =>
+           
+           
+            modelBuilder.Entity<Bottle>(b =>
+            {
+                b.HasIndex(e => new { e.TenantId });
+            });
+ modelBuilder.Entity<Doc>(d =>
+            {
+                d.HasIndex(e => new { e.TenantId });
+            });
+ modelBuilder.Entity<BinaryObject>(b =>
             {
                 b.HasIndex(e => new { e.TenantId });
             });

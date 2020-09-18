@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
+﻿import { NgModule } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { BottlesComponent } from './bottles/bottles/bottles.component';
+import { DocsComponent } from './docs/docs/docs.component';
 import { AuditLogsComponent } from './audit-logs/audit-logs.component';
 import { HostDashboardComponent } from './dashboard/host-dashboard.component';
 import { DemoUiComponentsComponent } from './demo-ui-components/demo-ui-components.component';
@@ -31,6 +33,8 @@ import { DynamicEntityPropertyValueComponent } from '@app/admin/dynamic-properti
             {
                 path: '',
                 children: [
+                    { path: 'bottles/bottles', component: BottlesComponent, data: { permission: 'Pages.Administration.Bottles' }  },
+                    { path: 'docs/docs', component: DocsComponent, data: { permission: 'Pages.Administration.Docs' }  },
                     { path: 'users', component: UsersComponent, data: { permission: 'Pages.Administration.Users' } },
                     { path: 'roles', component: RolesComponent, data: { permission: 'Pages.Administration.Roles' } },
                     { path: 'auditLogs', component: AuditLogsComponent, data: { permission: 'Pages.Administration.AuditLogs' } },

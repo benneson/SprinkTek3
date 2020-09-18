@@ -1,4 +1,4 @@
-import {PermissionCheckerService} from 'abp-ng2-module';
+﻿import {PermissionCheckerService} from 'abp-ng2-module';
 import {AppSessionService} from '@shared/common/session/app-session.service';
 
 import {Injectable} from '@angular/core';
@@ -26,6 +26,10 @@ export class AppNavigationService {
                 new AppMenuItem('OrganizationUnits', 'Pages.Administration.OrganizationUnits', 'flaticon-map', '/app/admin/organization-units'),
                 new AppMenuItem('Roles', 'Pages.Administration.Roles', 'flaticon-suitcase', '/app/admin/roles'),
                 new AppMenuItem('Users', 'Pages.Administration.Users', 'flaticon-users', '/app/admin/users'),
+            new AppMenuItem('Bottles', 'Pages.Administration.Bottles', 'flaticon-more', '/app/admin/bottles/bottles'),
+            
+            new AppMenuItem('Docs', 'Pages.Administration.Docs', 'flaticon-more', '/app/admin/docs/docs'),
+            
                 new AppMenuItem('Languages', 'Pages.Administration.Languages', 'flaticon-tabs', '/app/admin/languages', ['/app/admin/languages/{name}/texts']),
                 new AppMenuItem('AuditLogs', 'Pages.Administration.AuditLogs', 'flaticon-folder-1', '/app/admin/auditLogs'),
                 new AppMenuItem('Maintenance', 'Pages.Administration.Host.Maintenance', 'flaticon-lock', '/app/admin/maintenance'),

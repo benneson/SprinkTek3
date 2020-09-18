@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SprintTek.Bottles;
+using SprintTek.Docs;
+using System;
 using System.Linq;
 using Abp.Organizations;
 using SprintTek.Authorization.Roles;
@@ -12,11 +14,15 @@ namespace SprintTek.EntityHistory
 
         public static readonly Type[] HostSideTrackedTypes =
         {
+            typeof(Bottle),
+            typeof(Doc),
             typeof(OrganizationUnit), typeof(Role), typeof(Tenant)
         };
 
         public static readonly Type[] TenantSideTrackedTypes =
         {
+            typeof(Bottle),
+            typeof(Doc),
             typeof(OrganizationUnit), typeof(Role)
         };
 

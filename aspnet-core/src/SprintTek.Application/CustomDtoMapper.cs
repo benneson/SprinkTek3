@@ -1,3 +1,7 @@
+﻿using SprintTek.Bottles.Dtos;
+using SprintTek.Bottles;
+using SprintTek.Docs.Dtos;
+using SprintTek.Docs;
 using Abp.Application.Editions;
 using Abp.Application.Features;
 using Abp.Auditing;
@@ -48,6 +52,10 @@ namespace SprintTek
     {
         public static void CreateMappings(IMapperConfigurationExpression configuration)
         {
+            configuration.CreateMap<CreateOrEditBottleDto, Bottle>().ReverseMap();
+            configuration.CreateMap<BottleDto, Bottle>().ReverseMap();
+            configuration.CreateMap<CreateOrEditDocDto, Doc>().ReverseMap();
+            configuration.CreateMap<DocDto, Doc>().ReverseMap();
             //Inputs
             configuration.CreateMap<CheckboxInputType, FeatureInputTypeDto>();
             configuration.CreateMap<SingleLineStringInputType, FeatureInputTypeDto>();

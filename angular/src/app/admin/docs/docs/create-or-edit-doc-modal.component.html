@@ -1,0 +1,41 @@
+﻿<div bsModal #createOrEditModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="createOrEditModal" aria-hidden="true" [config]="{backdrop: 'static'}">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form *ngIf="active" #docForm="ngForm" novalidate (ngSubmit)="save()" autocomplete="off">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <span *ngIf="doc.id">{{l("EditDoc")}}</span>
+                        <span *ngIf="!doc.id">{{l("CreateNewDoc")}}</span>
+                    </h4>
+                    <button type="button" class="close" (click)="close()" aria-label="Close" [disabled]="saving">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                 
+
+
+								<div class="form-group">
+									<label for="Doc_name">{{l("name")}}</label>
+									<input type="text" id="Doc_name" class="form-control" [(ngModel)]="doc.name" name="name"    />
+								</div>
+					
+								<br/><div class="m-checkbox-list">
+									<label for="Doc_Active" class="kt-checkbox">
+										<input id="Doc_Active" type="checkbox" name="Active" [(ngModel)]="doc.active"> 
+										{{l("Active")}}
+										<span></span>
+									</label>
+								</div>
+					
+
+                </div>
+                <div class="modal-footer">
+                    <button [disabled]="saving" type="button" class="btn btn-default" (click)="close()">{{l("Cancel")}}</button>
+                    <button type="submit" class="btn btn-primary blue" [disabled]="!docForm.form.valid" [buttonBusy]="saving" [busyText]="l('SavingWithThreeDot')"><i class="fa fa-save"></i> <span>{{l("Save")}}</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

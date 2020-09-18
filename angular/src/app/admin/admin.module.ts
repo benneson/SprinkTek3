@@ -1,7 +1,15 @@
-import { CommonModule } from '@angular/common';
+﻿import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppCommonModule } from '@app/shared/common/app-common.module';
+import { BottlesComponent } from './bottles/bottles/bottles.component';
+import { ViewBottleModalComponent } from './bottles/bottles/view-bottle-modal.component';
+import { CreateOrEditBottleModalComponent } from './bottles/bottles/create-or-edit-bottle-modal.component';
+
+import { DocsComponent } from './docs/docs/docs.component';
+import { ViewDocModalComponent } from './docs/docs/view-doc-modal.component';
+import { CreateOrEditDocModalComponent } from './docs/docs/create-or-edit-doc-modal.component';
+
 import { UtilsModule } from '@shared/utils/utils.module';
 import { AddMemberModalComponent } from 'app/admin/organization-units/add-member-modal.component';
 import { AddRoleModalComponent } from 'app/admin/organization-units/add-role-modal.component';
@@ -143,6 +151,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         AppBsModalModule
     ],
     declarations: [
+		BottlesComponent,
+
+		ViewBottleModalComponent,
+		CreateOrEditBottleModalComponent,
+		DocsComponent,
+
+		ViewDocModalComponent,
+		CreateOrEditDocModalComponent,
         UsersComponent,
         PermissionComboComponent,
         RoleComboComponent,

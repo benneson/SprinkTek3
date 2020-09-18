@@ -6,6 +6,16 @@
     /// </summary>
     public static class AppPermissions
     {
+        public const string Pages_Administration_Bottles = "Pages.Administration.Bottles";
+        public const string Pages_Administration_Bottles_Create = "Pages.Administration.Bottles.Create";
+        public const string Pages_Administration_Bottles_Edit = "Pages.Administration.Bottles.Edit";
+        public const string Pages_Administration_Bottles_Delete = "Pages.Administration.Bottles.Delete";
+
+        public const string Pages_Administration_Docs = "Pages.Administration.Docs";
+        public const string Pages_Administration_Docs_Create = "Pages.Administration.Docs.Create";
+        public const string Pages_Administration_Docs_Edit = "Pages.Administration.Docs.Edit";
+        public const string Pages_Administration_Docs_Delete = "Pages.Administration.Docs.Delete";
+
         //COMMON PERMISSIONS (FOR BOTH OF TENANTS AND HOST)
 
         public const string Pages = "Pages";
